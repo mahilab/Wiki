@@ -11,6 +11,7 @@ A common source of confusion for new C++ users is the distinction between header
 - Header files typically contain what is called the **declaration** of either classes or functions. A declaration simply lays out the skeleton of a class or the signature of functions, omitting their actual implementation:
   ```cpp
   // MyClass.hpp
+  #pragma once
   class MyClass {
   public:
     MyClass();
@@ -19,11 +20,13 @@ A common source of confusion for new C++ users is the distinction between header
   ```
   ```cpp
   // Math.hpp
+  #pragma once
   double add(double a, double b);
   double subtract(double a, double b);
   ```
 - Header files conventionally define one class per header file, or a group of related functions per header file, as shown above. However, it's up to the developer how to organize header files -- the compiler generally does not care.
-- Header files are **incuded** in all the places you wish to use the declared class or functions by using a `#include "MyClass.hpp` statement, etc.
+- Header files are **incuded** in all the places you wish to use the declared class or functions by using a `#include "MyClass.hpp` statement, etc. 
+- Header files typically beging with an include gaurd, e.g `#pragma once`, so that they are not included more than once in a single `.cpp` file.
 
 #### Source Files
 
@@ -43,8 +46,9 @@ A common source of confusion for new C++ users is the distinction between header
   double add(double a, double b) { return a + b; }
   double subtract(double a, double b} { return a - b; }
   ```
-- Functions and classes defined in source files don't necessiarly have to be first declared in header files. You can add utility classes and free functions to source files without declaring them in header files.
 
 #### But You Should Know ...
+
+- Functions and classes defined in source files don't necessiarly have to be first declared in header files. You can add utility classes and free functions to source files without declaring them in header files.
 - Sometimes header files will contain the definitions, and omit the source file. This generally the case of **template** and **inline** classes/functions. 
  
