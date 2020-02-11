@@ -47,8 +47,9 @@ A common source of confusion for new C++ users is the distinction between header
   double subtract(double a, double b} { return a - b; }
   ```
 
-#### But You Should Know ...
-
-- Functions and classes defined in source files don't necessiarly have to be first declared in header files. You can add utility classes and free functions to source files without declaring them in header files.
-- Sometimes header files will contain the definitions, and omit the source file. This generally the case of **template** and **inline** classes/functions. 
+#### You Should Know ...
+- The reason we split the implementation from the declaration is so that we can include classes and functions everywhere we need them, without multiply defining them. For example, if two other source files need functions from `Math.hpp`, and the defintions were contained in the header file, the compiler would try to compile the functions twice, causing an error. By moving the implementation to `Math.cpp`, we ensure only one comilation occurs, while also allowing these functions to be use by multiple files. 
+- However, sometimes header files *will* contain the definitions, and omit the source file. This generally the case of **template** and **inline** classes/functions, or the header is only ever used once later on.
+- Functions and classes defined in source files don't necessiarly have to be first declared in header files. You can add utility classes and free functions to source files without declaring them in separate header files.
+ 
  
