@@ -31,10 +31,15 @@ A common source of confusion for new C++ users is the distinction between header
 - Source files generally contain the **definition** or **implementation** of code declared by header files. *If the header file is the table of contents, then the source file is the actual book.*
   ```cpp
   // MyClass.cpp
+  #include "MyClass.hpp"
+  
   MyClass::MyClass() { std::cout << "Hello, World" << std::endl; }
   double MyClass::a_member_function(double x) { return 2 * x };
   ```
   ```cpp
+  // Math.cpp
+  #include "Math.hpp"
+  
   double add(double a, double b) { return a + b; }
   double subtract(double a, double b} { return a - b; }
   ```
