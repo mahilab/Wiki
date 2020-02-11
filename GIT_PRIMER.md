@@ -4,7 +4,7 @@ This primer is taken from the [github git cheat sheet](https://education.github.
 
 # **Setup**
 
-## Configuring user information used across all local repositories
+### Configuring user information used across all local repositories
 
 set a name that is identifiable for credit when review version history
 
@@ -26,7 +26,7 @@ git config --global color.ui auto
 
 # **Setup & Init**
 
-## Configuring user information, initializing and cloning repositories
+### Configuring user information, initializing and cloning repositories
 
 initialize an existing directory as a Git repository
 
@@ -42,7 +42,7 @@ git clone [url]
 
 # **Stage & Snapshot**
 
-## Working with snapshots and the Git staging area
+### Working with snapshots and the Git staging area
 
 show modified files in working directory, staged for your next commit
 
@@ -80,120 +80,9 @@ commit your staged content as a new commit snapshot
 git commit -m “[descriptive message]”
 ```
 
-# **Branch & Merge**
-
-## Isolating work in branches, changing context, and integrating changes
-
-list your branches. a * will appear next to the currently active branch
-
-```shell
-git branch
-```
-
-create a new branch at the current commit
-
-```shell
-git branch [branch-name]
-```
-
-switch to another branch and check it out into your working directory
-
-```shell
-git checkout
-```
-
-merge the specified branch’s history into the current one
-
-```shell
-git merge [branch]
-```
-
-show all commits in the current branch’s history
-
-```shell
-git log
-```
-
-# **Inspect & Compare**
-
-## Examining logs, diffs and object information
-
-show the commit history for the currently active branch
-
-```shell
-git log
-```
-
-show the commits on branchA that are not on branchB
-
-```shell
-git log branchB..branchA
-```
-
-show the commits that changed file, even across renames
-
-```shell
-git log --follow [file]
-```
-
-show the diff of what is in branchA that is not in branchB
-
-```shell
-git diff branchB...branchA
-```
-
-show any object in Git in human-readable format
-
-```shell
-git show [SHA]
-```
-
-# **Tracking Path Changes**
-
-## Versioning file removes and path changes
-
-delete the file from project and stage the removal for commit
-
-```shell
-git rm [file]
-```
-
-change an existing file path and stage the move
-
-```shell
-git mv [existing-path] [new-path]
-```
-
-show all commit logs with indication of any paths that moved
-
-```shell
-git log --stat -M
-```
-
-# **Ignoring Patterns**
-
-## Preventing unintentional staging or commiting of files
-
-Save a file with desired paterns as .gitignore with either direct string matches or wildcard globs.
-
-```shell
-logs/
-
-*.notes
-
-pattern*/
-```
-
-system wide ignore patern for all local repositories
-
-```shell
-git config --global core.excludesfile [file]
-```
-
-
 # **Share & Update**
 
-## Retrieving updates from another repository and updating local repos
+### Retrieving updates from another repository and updating local repos
 
 add a git URL as an alias
 
@@ -225,9 +114,119 @@ fetch and merge any commits from the tracking remote branch
 git pull
 ```
 
+# **Branch & Merge**
+
+### Isolating work in branches, changing context, and integrating changes
+
+list your branches. a * will appear next to the currently active branch
+
+```shell
+git branch
+```
+
+create a new branch at the current commit
+
+```shell
+git branch [branch-name]
+```
+
+switch to another branch and check it out into your working directory
+
+```shell
+git checkout
+```
+
+merge the specified branch’s history into the current one
+
+```shell
+git merge [branch]
+```
+
+show all commits in the current branch’s history
+
+```shell
+git log
+```
+
+# **Tracking Path Changes**
+
+### Versioning file removes and path changes
+
+delete the file from project and stage the removal for commit
+
+```shell
+git rm [file]
+```
+
+change an existing file path and stage the move
+
+```shell
+git mv [existing-path] [new-path]
+```
+
+show all commit logs with indication of any paths that moved
+
+```shell
+git log --stat -M
+```
+
+# **Inspect & Compare**
+
+### Examining logs, diffs and object information
+
+show the commit history for the currently active branch
+
+```shell
+git log
+```
+
+show the commits on branchA that are not on branchB
+
+```shell
+git log branchB..branchA
+```
+
+show the commits that changed file, even across renames
+
+```shell
+git log --follow [file]
+```
+
+show the diff of what is in branchA that is not in branchB
+
+```shell
+git diff branchB...branchA
+```
+
+show any object in Git in human-readable format
+
+```shell
+git show [SHA]
+```
+
+# **Ignoring Patterns**
+
+### Preventing unintentional staging or commiting of files
+
+Save a file with desired paterns as .gitignore with either direct string matches or wildcard globs.
+
+```shell
+logs/
+
+*.notes
+
+pattern*/
+```
+
+system wide ignore patern for all local repositories
+
+```shell
+git config --global core.excludesfile [file]
+```
+
 # **Rewrite History**
 
-## Rewriting branches, updating commits and clearing history
+### Rewriting branches, updating commits and clearing history
 
 apply any commits of current branch ahead of specified one
 
@@ -243,9 +242,9 @@ Temporarily store modified, tracked files in order to change branches
 
 ```
 
-## **TEMPORARY COMMITS**
+# **Temporary commits**
 
-Save modified and staged changes
+save modified and staged changes
 
 ```shell
 git stash
