@@ -4,7 +4,7 @@ This repository contains tutorials and FAQs realted to using MAHI lab software a
 
 - [Git Primer](https://github.com/mahilab/Wiki/blob/master/GIT_PRIMER.md)
 - [C++ Primer](https://github.com/mahilab/Wiki/blob/master/CPP_PRIMER.md)
-- [CMake Primer]
+- [CMake Primer](https://github.com/mahilab/Wiki/blob/master/CMAKE_PRIMER.md)
 - [Setting Up a VS Code Environment](https://github.com/mahilab/Wiki/blob/master/SETTING_UP_VSCODE.md)
 
 ## Contributing
